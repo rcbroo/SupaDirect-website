@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, Check, Zap, Shield } from "lucide-react";
+import { Copy, Check, Zap, Shield, Globe, Database, Cpu, HardDrive, RefreshCw, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -700,11 +700,8 @@ export default function Home() {
               PRODUCT
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold mb-6">Everything your app needs to scale</h2>
-            <p className="text-lg sm:text-xl text-white/70 mb-4">
+            <p className="text-lg sm:text-xl text-white/70 mb-8">
               Frontend hosting, real-time data, serverless compute, GPU/NPU acceleration, storage, and CDN—on a single platform.
-            </p>
-            <p className="text-base sm:text-lg text-white/60 mb-8">
-              Global edge hosting • Real-time database • Serverless functions • GPU/NPU compute • Unified billing • Type-safe API • Auth built-in • CDN + storage
             </p>
             <Link href="/pricing">
               <Button className="bg-[#7CAAB7] text-white hover:bg-[#6a99a6]">
@@ -714,18 +711,63 @@ export default function Home() {
           </div>
         </FadeInSection>
 
-        <ScaleIn delay={0.3}>
-          <div className="max-w-7xl mx-auto mt-16 flex justify-center relative z-10">
-            <Image
-              src="/product-diagram.svg"
-              alt="Product features diagram showing server functions, database, vector search, cron jobs, file storage, automatic caching, strong consistency, realtime updates, type safety, and framework integration"
-              width={1280}
-              height={720}
-              className="w-full max-w-5xl h-auto rounded-lg"
-              priority
-            />
+        {/* Animated Platform Architecture Diagram */}
+        <div className="max-w-6xl mx-auto mt-16 relative z-10">
+          <div className="relative">
+            {/* Central Hub */}
+            <motion.div
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-brand-rose to-brand-rose-dark rounded-2xl flex items-center justify-center shadow-2xl shadow-brand-rose/20 z-20"
+              animate={{
+                boxShadow: ["0 0 30px rgba(216, 156, 164, 0.3)", "0 0 60px rgba(216, 156, 164, 0.5)", "0 0 30px rgba(216, 156, 164, 0.3)"]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-brand-green-darker">SD</div>
+                <div className="text-xs text-brand-green-darker/80 mt-1">Supadirect</div>
+              </div>
+            </motion.div>
+
+            {/* Feature Cards Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+              {[
+                { icon: Globe, label: "Edge Hosting", desc: "150+ locations", color: "from-blue-500 to-cyan-500", delay: 0 },
+                { icon: Database, label: "Real-time DB", desc: "TypeScript-first", color: "from-emerald-500 to-green-500", delay: 0.1 },
+                { icon: Cpu, label: "GPU/NPU", desc: "AI acceleration", color: "from-purple-500 to-pink-500", delay: 0.2 },
+                { icon: Shield, label: "Auth", desc: "Built-in security", color: "from-orange-500 to-red-500", delay: 0.3 },
+                { icon: Zap, label: "Functions", desc: "Serverless compute", color: "from-yellow-500 to-amber-500", delay: 0.4 },
+                { icon: HardDrive, label: "Storage", desc: "CDN delivery", color: "from-indigo-500 to-blue-500", delay: 0.5 },
+                { icon: RefreshCw, label: "Sync", desc: "Real-time updates", color: "from-teal-500 to-cyan-500", delay: 0.6 },
+                { icon: Code, label: "Type-safe", desc: "End-to-end TS", color: "from-rose-500 to-pink-500", delay: 0.7 },
+              ].map((feature, i) => (
+                <ScaleIn key={i} delay={feature.delay}>
+                  <motion.div
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                  >
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3 group-hover:shadow-lg transition-shadow`}>
+                      <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-white text-sm sm:text-base mb-1">{feature.label}</h3>
+                    <p className="text-white/50 text-xs sm:text-sm">{feature.desc}</p>
+                  </motion.div>
+                </ScaleIn>
+              ))}
+            </div>
+
+            {/* Connecting Lines Animation */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 10 }}>
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(216, 156, 164, 0)" />
+                  <stop offset="50%" stopColor="rgba(216, 156, 164, 0.5)" />
+                  <stop offset="100%" stopColor="rgba(216, 156, 164, 0)" />
+                </linearGradient>
+              </defs>
+              {/* Animated pulse lines would connect features to center */}
+            </svg>
           </div>
-        </ScaleIn>
+        </div>
       </section>
 
       {/* Customer Love */}
