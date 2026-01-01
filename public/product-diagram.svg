@@ -1,0 +1,163 @@
+<svg width="1400" height="600" viewBox="0 0 1400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8dff5;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#f5e6d3;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f0e5d5;stop-opacity:0.3" />
+    </linearGradient>
+
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="600" fill="url(#bgGradient)"/>
+
+  <!-- Central 3D code window -->
+  <g transform="translate(500, 150)" filter="url(#shadow)">
+    <!-- Back panels for 3D effect -->
+    <rect x="60" y="-20" width="350" height="280" fill="#c8b8d8" opacity="0.3" rx="8" transform="skewY(-3)"/>
+    <rect x="40" y="-10" width="350" height="280" fill="#d8c8e8" opacity="0.4" rx="8" transform="skewY(-2)"/>
+
+    <!-- Main window -->
+    <rect x="20" y="0" width="350" height="280" fill="#e8d8f8" rx="12" stroke="#c8b8d8" stroke-width="2"/>
+
+    <!-- Window header -->
+    <rect x="20" y="0" width="350" height="40" fill="#d8c8e8" rx="12"/>
+    <rect x="20" y="35" width="350" height="5" fill="#c8b8d8"/>
+
+    <!-- Window dots -->
+    <circle cx="40" cy="20" r="6" fill="#ff5f57"/>
+    <circle cx="60" cy="20" r="6" fill="#ffbd2e"/>
+    <circle cx="80" cy="20" r="6" fill="#28c840"/>
+
+    <!-- Code lines -->
+    <rect x="40" y="60" width="120" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+    <rect x="40" y="80" width="160" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+    <rect x="40" y="100" width="100" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+    <rect x="40" y="140" width="180" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+    <rect x="40" y="160" width="140" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+    <rect x="40" y="180" width="100" height="8" fill="#a89bb8" opacity="0.6" rx="4"/>
+
+    <!-- Code symbol -->
+    <text x="200" y="200" font-size="80" fill="#b8a8c8" opacity="0.3" font-family="monospace" font-weight="300">&lt;/&gt;</text>
+  </g>
+
+  <!-- Left side feature icons -->
+  <!-- Server Functions -->
+  <g transform="translate(200, 120)">
+    <rect width="60" height="60" fill="#5a6b7d" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="40" font-size="28" fill="#fff" text-anchor="middle">λ</text>
+    <text x="-10" y="35" font-size="11" fill="#999" text-anchor="end" font-family="monospace">SERVER FUNCTIONS</text>
+  </g>
+
+  <!-- ACID Database -->
+  <g transform="translate(200, 220)">
+    <rect width="60" height="60" fill="#d4a350" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">🗄</text>
+    <text x="-10" y="35" font-size="11" fill="#999" text-anchor="end" font-family="monospace">ACID DATABASE</text>
+  </g>
+
+  <!-- Vector Search -->
+  <g transform="translate(200, 320)">
+    <rect width="60" height="60" fill="#d46550" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">🔍</text>
+    <text x="-10" y="35" font-size="11" fill="#999" text-anchor="end" font-family="monospace">VECTOR SEARCH</text>
+  </g>
+
+  <!-- Cron Jobs -->
+  <g transform="translate(200, 420)">
+    <rect width="60" height="60" fill="#5a6b7d" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">⏰</text>
+    <text x="-10" y="35" font-size="11" fill="#999" text-anchor="end" font-family="monospace">CRON JOBS</text>
+  </g>
+
+  <!-- File Storage -->
+  <g transform="translate(200, 520)">
+    <rect width="60" height="60" fill="#d47550" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">📁</text>
+    <text x="-10" y="35" font-size="11" fill="#999" text-anchor="end" font-family="monospace">FILE STORAGE</text>
+  </g>
+
+  <!-- Right side feature icons -->
+  <!-- Realtime Updates -->
+  <g transform="translate(1140, 120)">
+    <rect width="60" height="60" fill="#d46550" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">🔄</text>
+    <text x="70" y="35" font-size="11" fill="#999" font-family="monospace">REALTIME UPDATES</text>
+  </g>
+
+  <!-- Type Safety -->
+  <g transform="translate(1140, 220)">
+    <rect width="60" height="60" fill="#5a6b7d" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">TS</text>
+    <text x="70" y="35" font-size="11" fill="#999" font-family="monospace">TYPE SAFETY</text>
+  </g>
+
+  <!-- Framework Integration -->
+  <g transform="translate(1140, 320)">
+    <rect width="60" height="60" fill="#d4a350" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">⚛</text>
+    <text x="70" y="31" font-size="11" fill="#999" font-family="monospace">FRAMEWORK</text>
+    <text x="70" y="43" font-size="11" fill="#999" font-family="monospace">INTEGRATION</text>
+  </g>
+
+  <!-- Bottom feature icons -->
+  <!-- Automatic Caching -->
+  <g transform="translate(620, 520)">
+    <rect width="60" height="60" fill="#d4a350" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">⚡</text>
+    <text x="30" y="-10" font-size="11" fill="#999" text-anchor="middle" font-family="monospace">AUTOMATIC CACHING</text>
+  </g>
+
+  <!-- Strong Consistency -->
+  <g transform="translate(740, 520)">
+    <rect width="60" height="60" fill="#d46550" rx="12" filter="url(#shadow)"/>
+    <text x="30" y="42" font-size="32" fill="#fff" text-anchor="middle">🎯</text>
+    <text x="30" y="-10" font-size="11" fill="#999" text-anchor="middle" font-family="monospace">STRONG</text>
+    <text x="30" y="3" font-size="11" fill="#999" text-anchor="middle" font-family="monospace">CONSISTENCY</text>
+  </g>
+
+  <!-- Connection lines -->
+  <g opacity="0.3" stroke="#888" stroke-width="2" stroke-dasharray="8,4" fill="none">
+    <path d="M 180 150 Q 300 200 400 230"/>
+    <path d="M 180 250 Q 300 280 400 300"/>
+    <path d="M 180 350 Q 300 340 400 320"/>
+    <path d="M 180 450 L 320 380"/>
+
+    <path d="M 770 230 Q 900 200 1040 150"/>
+    <path d="M 770 300 Q 900 280 1040 250"/>
+    <path d="M 770 320 Q 900 340 1040 350"/>
+
+    <path d="M 600 430 L 560 520"/>
+    <path d="M 670 430 L 670 520"/>
+  </g>
+
+  <!-- Decorative gears -->
+  <g transform="translate(420, 480)" opacity="0.15">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#666" stroke-width="4"/>
+    <circle cx="0" cy="0" r="18" fill="#666"/>
+    <rect x="-4" y="-32" width="8" height="8" fill="#666"/>
+    <rect x="-4" y="24" width="8" height="8" fill="#666"/>
+    <rect x="24" y="-4" width="8" height="8" fill="#666"/>
+    <rect x="-32" y="-4" width="8" height="8" fill="#666"/>
+  </g>
+
+  <g transform="translate(350, 200)" opacity="0.15">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#666" stroke-width="5"/>
+    <circle cx="0" cy="0" r="20" fill="#999" opacity="0.5"/>
+    <rect x="-5" y="-37" width="10" height="10" fill="#666"/>
+    <rect x="-5" y="27" width="10" height="10" fill="#666"/>
+    <rect x="27" y="-5" width="10" height="10" fill="#666"/>
+    <rect x="-37" y="-5" width="10" height="10" fill="#666"/>
+  </g>
+</svg>

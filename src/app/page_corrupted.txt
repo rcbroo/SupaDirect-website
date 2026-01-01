@@ -1,0 +1,158 @@
+<div className="max-w-7xl mx-auto mt-16 flex justify-center">
+            <div className="w-full max-w-6xl">
+              {/* Temporary SVG illustration - will be replaced with uploaded image */}
+              <svg viewBox="0 0 1200 600" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+                {/* Background gradient */}
+                <defs>
+                  <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#e0d5f0', stopOpacity: 0.3 }} />
+                    <stop offset="50%" style={{ stopColor: '#f5e6d3', stopOpacity: 0.3 }} />
+                    <stop offset="100%" style={{ stopColor: '#f0e5d5', stopOpacity: 0.3 }} />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <rect width="1200" height="600" fill="url(#bgGradient)" rx="20"/>
+
+                {/* Central code window with 3D effect */}
+                <g transform="translate(400, 150)">
+                  {/* Back panels */}
+                  <rect x="60" y="-20" width="350" height="280" fill="#8b7d9e" opacity="0.3" rx="8" transform="skewY(-5)"/>
+                  <rect x="40" y="-10" width="350" height="280" fill="#9b8dae" opacity="0.4" rx="8" transform="skewY(-3)"/>
+
+                  {/* Main window */}
+                  <rect x="20" y="0" width="350" height="280" fill="#c8b8d8" rx="8"/>
+                  <rect x="20" y="0" width="350" height="40" fill="#a89bb8" rx="8"/>
+                  <circle cx="40" cy="20" r="6" fill="#ff5f57"/>
+                  <circle cx="60" cy="20" r="6" fill="#ffbd2e"/>
+                  <circle cx="80" cy="20" r="6" fill="#28c840"/>
+
+                  {/* Code lines */}
+                  <rect x="40" y="60" width="80" height="8" fill="#6b5b7b" opacity="0.6" rx="4"/>
+                  <rect x="40" y="80" width="120" height="8" fill="#6b5b7b" opacity="0.6" rx="4"/>
+                  <rect x="40" y="100" width="100" height="8" fill="#6b5b7b" opacity="0.6" rx="4"/>
+                  <rect x="40" y="140" width="140" height="8" fill="#6b5b7b" opacity="0.6" rx="4"/>
+                  <rect x="40" y="160" width="90" height="8" fill="#6b5b7b" opacity="0.6" rx="4"/>
+
+                  {/* Code symbol */}
+                  <text x="200" y="180" fontSize="60" fill="#7b6b8b" opacity="0.4" fontFamily="monospace">&lt;/&gt;</text>
+                </g>
+
+                {/* Feature icons around the central window */}
+                {/* Left side icons */}
+                <g transform="translate(80, 100)">
+                  <rect width="80" height="80" fill="#5a6b7d" rx="12"/>
+                  <text x="40" y="50" fontSize="36" textAnchor="middle">λ</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">SERVER</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">FUNCTIONS</text>
+                </g>
+
+                <g transform="translate(80, 220)">
+                  <rect width="80" height="80" fill="#d4a350" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">🗄</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">ACID</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">DATABASE</text>
+                </g>
+
+                <g transform="translate(80, 340)">
+                  <rect width="80" height="80" fill="#d46550" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">🔍</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">VECTOR</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">SEARCH</text>
+                </g>
+
+                <g transform="translate(200, 420)">
+                  <rect width="80" height="80" fill="#5a6b7d" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">⏰</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">CRON</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">JOBS</text>
+                </g>
+
+                <g transform="translate(80, 460)">
+                  <rect width="80" height="80" fill="#d47550" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">📁</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">FILE</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">STORAGE</text>
+                </g>
+
+                {/* Right side icons */}
+                <g transform="translate(1040, 100)">
+                  <rect width="80" height="80" fill="#d46550" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">🔄</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">REALTIME</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">UPDATES</text>
+                </g>
+
+                <g transform="translate(1040, 220)">
+                  <rect width="80" height="80" fill="#5a6b7d" rx="12"/>
+                  <text x="40" y="50" fontSize="28" textAnchor="middle" fontWeight="bold">TS</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">TYPE</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">SAFETY</text>
+                </g>
+
+                <g transform="translate(1040, 340)">
+                  <rect width="80" height="80" fill="#d4a350" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">⚛</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">FRAMEWORK</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">INTEGRATION</text>
+                </g>
+
+                {/* Bottom icons */}
+                <g transform="translate(520, 460)">
+                  <rect width="80" height="80" fill="#d4a350" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">⚡</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">AUTOMATIC</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">CACHING</text>
+                </g>
+
+                <g transform="translate(640, 460)">
+                  <rect width="80" height="80" fill="#d46550" rx="12"/>
+                  <text x="40" y="55" fontSize="40" textAnchor="middle">🎯</text>
+                  <text x="40" y="105" fontSize="12" fill="#999" textAnchor="middle">STRONG</text>
+                  <text x="40" y="120" fontSize="12" fill="#999" textAnchor="middle">CONSISTENCY</text>
+                </g>
+
+                {/* Connection lines with dots */}
+                <g opacity="0.3" stroke="#888" strokeWidth="2" strokeDasharray="5,5" fill="none">
+                  <path d="M 200 140 L 400 200"/>
+                  <path d="M 200 260 L 400 280"/>
+                  <path d="M 200 380 L 400 320"/>
+                  <path d="M 280 460 L 400 360"/>
+                  <path d="M 800 200 L 1040 140"/>
+                  <path d="M 800 280 L 1040 260"/>
+                  <path d="M 800 320 L 1040 380"/>
+                  <path d="M 600 430 L 560 460"/>
+                  <path d="M 680 430 L 680 460"/>
+                </g>
+
+                {/* Decorative gears */}
+                <g transform="translate(320, 420)" opacity="0.2">
+                  <circle cx="0" cy="0" r="30" fill="none" stroke="#666" strokeWidth="3"/>
+                  <circle cx="0" cy="0" r="15" fill="#666"/>
+                  {Array.from({ length: 8 }).map((_, i) => {
+                    const angle = (i * 45 * Math.PI) / 180;
+                    const x = Math.cos(angle) * 25;
+                    const y = Math.sin(angle) * 25;
+                    return <rect key={i} x={x-3} y={y-3} width="6" height="6" fill="#666"/>;
+                  })}
+                </g>
+
+                <g transform="translate(900, 450)" opacity="0.2">
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="#666" strokeWidth="3"/>
+                  <circle cx="0" cy="0" r="12" fill="#666"/>
+                  {Array.from({ length: 6 }).map((_, i) => {
+                    const angle = (i * 60 * Math.PI) / 180;
+                    const x = Math.cos(angle) * 20;
+                    const y = Math.sin(angle) * 20;
+                    return <rect key={i} x={x-3} y={y-3} width="6" height="6" fill="#666"/>;
+                  })}
+                </g>
+              </svg>
+            </div>
+          </div>

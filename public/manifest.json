@@ -1,0 +1,16 @@
+{
+  "name": "Supadirect - Backend Platform",
+  "short_name": "Supadirect",
+  "description": "The backend platform that keeps your app in sync",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4a5f5a",
+  "theme_color": "#d89ca4",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

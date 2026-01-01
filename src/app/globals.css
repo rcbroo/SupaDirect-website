@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Supadirect Logo Color System - Green backgrounds, Pink text */
+    --brand-rose: 349 37% 73%;
+    --brand-green: 162 11% 34%;
+    --brand-cream: 30 33% 95%;
+
+    --background: 162 11% 34%;
+    --foreground: 349 37% 73%;
+    --card: 162 11% 38%;
+    --card-foreground: 349 37% 73%;
+    --popover: 162 11% 38%;
+    --popover-foreground: 349 37% 73%;
+    --primary: 349 37% 73%;
+    --primary-foreground: 162 11% 24%;
+    --secondary: 349 37% 73%;
+    --secondary-foreground: 162 11% 24%;
+    --muted: 162 11% 44%;
+    --muted-foreground: 349 37% 80%;
+    --accent: 349 37% 73%;
+    --accent-foreground: 162 11% 24%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 162 11% 50%;
+    --input: 162 11% 40%;
+    --ring: 349 37% 73%;
+    --radius: 0.5rem;
+    --chart-1: 349 37% 73%;
+    --chart-2: 162 11% 44%;
+    --chart-3: 349 37% 80%;
+    --chart-4: 162 11% 50%;
+    --chart-5: 349 37% 65%;
+  }
+
+  .dark {
+    --background: 162 11% 20%;
+    --foreground: 349 37% 73%;
+    --card: 162 11% 24%;
+    --card-foreground: 349 37% 73%;
+    --popover: 162 11% 24%;
+    --popover-foreground: 349 37% 73%;
+    --primary: 349 37% 73%;
+    --primary-foreground: 162 11% 20%;
+    --secondary: 349 37% 73%;
+    --secondary-foreground: 162 11% 20%;
+    --muted: 162 11% 30%;
+    --muted-foreground: 349 37% 80%;
+    --accent: 349 37% 73%;
+    --accent-foreground: 162 11% 20%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 349 37% 73%;
+    --border: 162 11% 35%;
+    --input: 162 11% 35%;
+    --ring: 349 37% 73%;
+    --chart-1: 349 37% 73%;
+    --chart-2: 162 11% 40%;
+    --chart-3: 349 37% 75%;
+    --chart-4: 162 11% 50%;
+    --chart-5: 349 37% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  /* Respect user preference for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Better focus visibility for keyboard users */
+  *:focus-visible {
+    @apply outline-2 outline-brand-rose outline-offset-2;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-green-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-rose/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-rose/70;
+  }
+}
