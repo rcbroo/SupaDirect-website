@@ -713,60 +713,55 @@ export default function Home() {
 
         {/* Animated Platform Architecture Diagram */}
         <div className="max-w-6xl mx-auto mt-16 relative z-10">
-          <div className="relative">
-            {/* Central Hub */}
-            <motion.div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br from-brand-rose to-brand-rose-dark rounded-2xl flex items-center justify-center shadow-2xl shadow-brand-rose/20 z-20"
-              animate={{
-                boxShadow: ["0 0 30px rgba(216, 156, 164, 0.3)", "0 0 60px rgba(216, 156, 164, 0.5)", "0 0 30px rgba(216, 156, 164, 0.3)"]
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-brand-green-darker">SD</div>
-                <div className="text-xs text-brand-green-darker/80 mt-1">Supadirect</div>
-              </div>
-            </motion.div>
+          {/* Feature Cards Grid - Clean layout without blocking elements */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { icon: Globe, label: "Edge Hosting", desc: "150+ locations worldwide", color: "from-blue-500 to-cyan-500", delay: 0 },
+              { icon: Database, label: "Real-time DB", desc: "TypeScript-first design", color: "from-emerald-500 to-green-500", delay: 0.1 },
+              { icon: Cpu, label: "GPU/NPU", desc: "AI acceleration built-in", color: "from-purple-500 to-pink-500", delay: 0.2 },
+              { icon: Shield, label: "Auth", desc: "Enterprise-grade security", color: "from-orange-500 to-red-500", delay: 0.3 },
+              { icon: Zap, label: "Functions", desc: "Auto-scaling serverless", color: "from-yellow-500 to-amber-500", delay: 0.4 },
+              { icon: HardDrive, label: "Storage", desc: "Global CDN delivery", color: "from-indigo-500 to-blue-500", delay: 0.5 },
+              { icon: RefreshCw, label: "Sync", desc: "Real-time everywhere", color: "from-teal-500 to-cyan-500", delay: 0.6 },
+              { icon: Code, label: "Type-safe", desc: "End-to-end TypeScript", color: "from-rose-500 to-pink-500", delay: 0.7 },
+            ].map((feature, i) => (
+              <ScaleIn key={i} delay={feature.delay}>
+                <motion.div
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 sm:p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-pointer relative overflow-hidden"
+                  whileHover={{ scale: 1.02, y: -4 }}
+                >
+                  {/* Subtle gradient glow on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
-            {/* Feature Cards Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                { icon: Globe, label: "Edge Hosting", desc: "150+ locations", color: "from-blue-500 to-cyan-500", delay: 0 },
-                { icon: Database, label: "Real-time DB", desc: "TypeScript-first", color: "from-emerald-500 to-green-500", delay: 0.1 },
-                { icon: Cpu, label: "GPU/NPU", desc: "AI acceleration", color: "from-purple-500 to-pink-500", delay: 0.2 },
-                { icon: Shield, label: "Auth", desc: "Built-in security", color: "from-orange-500 to-red-500", delay: 0.3 },
-                { icon: Zap, label: "Functions", desc: "Serverless compute", color: "from-yellow-500 to-amber-500", delay: 0.4 },
-                { icon: HardDrive, label: "Storage", desc: "CDN delivery", color: "from-indigo-500 to-blue-500", delay: 0.5 },
-                { icon: RefreshCw, label: "Sync", desc: "Real-time updates", color: "from-teal-500 to-cyan-500", delay: 0.6 },
-                { icon: Code, label: "Type-safe", desc: "End-to-end TS", color: "from-rose-500 to-pink-500", delay: 0.7 },
-              ].map((feature, i) => (
-                <ScaleIn key={i} delay={feature.delay}>
-                  <motion.div
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3 group-hover:shadow-lg transition-shadow`}>
-                      <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base mb-1">{feature.label}</h3>
-                    <p className="text-white/50 text-xs sm:text-sm">{feature.desc}</p>
-                  </motion.div>
-                </ScaleIn>
-              ))}
-            </div>
-
-            {/* Connecting Lines Animation */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" style={{ zIndex: 10 }}>
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(216, 156, 164, 0)" />
-                  <stop offset="50%" stopColor="rgba(216, 156, 164, 0.5)" />
-                  <stop offset="100%" stopColor="rgba(216, 156, 164, 0)" />
-                </linearGradient>
-              </defs>
-              {/* Animated pulse lines would connect features to center */}
-            </svg>
+                  <div className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 group-hover:shadow-lg group-hover:shadow-white/10 transition-all duration-300`}>
+                    <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                  </div>
+                  <h3 className="relative font-semibold text-white text-base sm:text-lg mb-1">{feature.label}</h3>
+                  <p className="relative text-white/50 text-xs sm:text-sm">{feature.desc}</p>
+                </motion.div>
+              </ScaleIn>
+            ))}
           </div>
+
+          {/* Unified Platform Message */}
+          <motion.div
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/5 border border-white/10 rounded-full px-6 py-3">
+              <div className="flex -space-x-2">
+                {[Globe, Database, Cpu, Zap].map((Icon, i) => (
+                  <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-rose to-brand-rose-dark flex items-center justify-center border-2 border-[#1d1d1d]">
+                    <Icon className="w-4 h-4 text-brand-green-darker" />
+                  </div>
+                ))}
+              </div>
+              <span className="text-white/80 text-sm sm:text-base font-medium">All integrated. One dashboard. One bill.</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
